@@ -14,7 +14,11 @@
 
         <activity android:name=".ui.activity.AboutUsActivity" />
 
-        <activity android:name=".ui.activity.MainActivity">
+        <activity android:name=".ui.activity.FanartSourceActivity"/>
+        <activity android:name=".ui.activity.FanartDetailActivity" />
+
+        <activity android:name=".ui.activity.MainActivity"
+            android:theme="@style/AppThemeNoToolbar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
