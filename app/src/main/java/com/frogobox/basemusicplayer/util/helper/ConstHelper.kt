@@ -120,6 +120,9 @@ class ConstHelper {
     }
 
     object Ext {
+
+        const val DEF_DRAWABLE = "drawable"
+        const val DEF_RAW = "raw"
         const val MP4 = ".mp4"
         const val PNG = ".png"
     }

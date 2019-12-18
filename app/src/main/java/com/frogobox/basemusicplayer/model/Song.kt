@@ -18,4 +18,11 @@ package com.frogobox.basemusicplayer.model
  *
  */
 
-class Song
+data class Song(
+    var songImage: Int = 0,
+    var songMusic: Int = 0,
+    var songName: String? = null,
+    var artistName: String? = null,
+    var albumName: String? = null
+
+)

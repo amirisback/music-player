@@ -37,13 +37,13 @@ class FanartFragment : BaseFragment(), BaseViewListener<String> {
         setupShowAdsInterstitial()
     }
 
-    private fun arrayFruit(): MutableList<String> {
+    private fun arrayFanArt(): MutableList<String> {
         return RawDataHelper().fetchData(context, R.raw._asset_image_fanart)
     }
 
     private fun setupAdapter(): FanartViewAdapter {
         val adapter = FanartViewAdapter()
-        adapter.setupRequirement(this, arrayFruit(), R.layout.item_grid_fanart)
+        adapter.setupRequirement(this, arrayFanArt(), R.layout.item_grid_fanart)
         return adapter
     }
 
