@@ -1,8 +1,8 @@
-package com.frogobox.basemusicplayer
+package com.frogobox.basemusicplayer.ui.activity
 
 import android.os.Bundle
+import com.frogobox.basemusicplayer.R
 import com.frogobox.basemusicplayer.base.admob.BaseAdmobActivity
-import com.frogobox.basemusicplayer.base.ui.BaseActivity
 import kotlinx.android.synthetic.main.ads_phone_tab_special_smart_banner.*
 
 class MainActivity : BaseAdmobActivity() {
@@ -14,7 +14,6 @@ class MainActivity : BaseAdmobActivity() {
         setupShowAdsBanner(ads_phone_tab_special_smart_banner)
 
     }
-
 
 
 }

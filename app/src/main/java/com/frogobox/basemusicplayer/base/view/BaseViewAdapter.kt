@@ -1,5 +1,6 @@
-package com.frogobox.basemusicplayer.base.adapter
+package com.frogobox.basemusicplayer.base.view
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
  * Created by Faisal Amir
  * FrogoBox Inc License
  * =========================================
- * SpeechBooster
+ * PregnantFashsion
  * Copyright (C) 10/09/2019.
  * All rights reserved
  * -----------------------------------------
@@ -19,10 +20,9 @@ import androidx.recyclerview.widget.RecyclerView
  * LinkedIn : linkedin.com/in/faisalamircs
  * -----------------------------------------
  * FrogoBox Software Industries
- * com.frogobox.speechbooster.base
+ * com.frogobox.basemusicplayer.base
  *
  */
-
 abstract class BaseViewAdapter<T> : RecyclerView.Adapter<BaseViewHolder<T>>() {
 
     private lateinit var mViewListener: BaseViewListener<T>
@@ -49,6 +49,5 @@ abstract class BaseViewAdapter<T> : RecyclerView.Adapter<BaseViewHolder<T>>() {
     override fun onBindViewHolder(holder: BaseViewHolder<T>, position: Int) {
         holder.bindItem(mRecyclerViewDataList[position], mViewListener)
     }
-
 
 }

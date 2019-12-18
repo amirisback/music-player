@@ -3,11 +3,11 @@ package com.frogobox.basemusicplayer.base.admob
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.frogobox.basemusicplayer.base.ui.BaseActivity
-import com.frogobox.basemusicplayer.helper.AdmobHelper.Banner.setupBanner
-import com.frogobox.basemusicplayer.helper.AdmobHelper.Banner.showBanner
-import com.frogobox.basemusicplayer.helper.AdmobHelper.Interstitial.setupInterstitial
-import com.frogobox.basemusicplayer.helper.AdmobHelper.Interstitial.showInterstitial
-import com.frogobox.basemusicplayer.helper.AdmobHelper.Publisher.setupPublisher
+import com.frogobox.basemusicplayer.util.helper.AdmobHelper.Banner.setupBanner
+import com.frogobox.basemusicplayer.util.helper.AdmobHelper.Banner.showBanner
+import com.frogobox.basemusicplayer.util.helper.AdmobHelper.Interstitial.setupInterstitial
+import com.frogobox.basemusicplayer.util.helper.AdmobHelper.Interstitial.showInterstitial
+import com.frogobox.basemusicplayer.util.helper.AdmobHelper.Publisher.setupPublisher
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.InterstitialAd
 import com.google.android.gms.ads.reward.RewardedVideoAd
