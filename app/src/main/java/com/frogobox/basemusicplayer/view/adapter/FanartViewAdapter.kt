@@ -25,12 +25,15 @@ import kotlinx.android.synthetic.main.item_grid_fanart.view.*
  *
  */
 class FanartViewAdapter : BaseViewAdapter<String>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<String> {
         return FashionViewHolder(viewLayout(parent))
     }
 
     inner class FashionViewHolder(view: View) : BaseViewHolder<String>(view) {
+
         private val iv_image = view.iv_poster
+
         override fun initComponent(data: String) {
             super.initComponent(data)
             Glide.with(itemView.context).load(data).into(iv_image)

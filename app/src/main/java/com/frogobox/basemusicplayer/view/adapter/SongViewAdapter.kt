@@ -33,9 +33,9 @@ class SongViewAdapter : BaseViewAdapter<Song>() {
 
     inner class SongViewHolder(view: View) : BaseViewHolder<Song>(view) {
 
-        val tv_song = view.tv_song_name_list_item
-        val tv_album = view.tv_album_name_list_item
-        val iv_cover = view.iv_song_image_list_item
+        private val tv_song = view.tv_song_name_list_item
+        private val tv_album = view.tv_album_name_list_item
+        private val iv_cover = view.iv_song_image_list_item
 
         override fun initComponent(data: Song) {
             super.initComponent(data)
