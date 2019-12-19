@@ -18,6 +18,6 @@
 
     </ScrollView>
 
-    <include layout="@layout/ads_phone_tab_banner" />
+    <include layout="@layout/ads_phone_tab_special_smart_banner" />
 
 </RelativeLayout>

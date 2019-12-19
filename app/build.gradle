@@ -6,13 +6,13 @@ apply plugin: 'kotlin-kapt'
 android {
 
     // Declaration app name
-    def nameApp = "Base Music Player"
+    def nameApp = "Lagu Hindia Evaluasi Offline"
 
     // Declaration apk / aab name
-    def nameAPK = "base-music-player"
+    def nameAPK = "lagu-hindia-offline"
 
     // Declaration Room DB Name
-    def nameDB = '"base_music_player.db"'
+    def nameDB = '"lagu_hindia_oflline.db"'
 
     def versionPropsFile = file('version.properties')
     Properties versionProps = new Properties()
@@ -37,7 +37,7 @@ android {
     buildToolsVersion "29.0.1"
 
     defaultConfig {
-        applicationId "com.frogobox.basemusicplayer"
+        applicationId "com.frogobox.hindiaevaluasi"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1

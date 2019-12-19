@@ -57,6 +57,6 @@
             android:text="@string/text_copyright" />
     </LinearLayout>
 
-    <include layout="@layout/ads_phone_tab_banner" />
+    <include layout="@layout/ads_phone_tab_special_smart_banner" />
 
 </RelativeLayout>

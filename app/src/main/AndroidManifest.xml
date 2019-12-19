@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.frogobox.basemusicplayer">
+    package="com.frogobox.hindia">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,12 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activity.SongPlayingActivity"></activity>
-        <activity android:name=".ui.activity.AboutUsActivity" />
-        <activity android:name=".ui.activity.FanartSourceActivity" />
-        <activity android:name=".ui.activity.FanartDetailActivity" />
+        <activity android:name="com.frogobox.hindia.ui.activity.SongPlayingActivity"></activity>
+        <activity android:name="com.frogobox.hindia.ui.activity.AboutUsActivity" />
+        <activity android:name="com.frogobox.hindia.ui.activity.FanartSourceActivity" />
+        <activity android:name="com.frogobox.hindia.ui.activity.FanartDetailActivity" />
         <activity
-            android:name=".ui.activity.MainActivity"
+            android:name="com.frogobox.hindia.ui.activity.MainActivity"
             android:theme="@style/AppThemeNoToolbar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

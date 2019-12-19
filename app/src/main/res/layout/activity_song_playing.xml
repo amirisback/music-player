@@ -58,7 +58,7 @@
             android:id="@+id/stop"
             android:layout_width="@dimen/dimen_large_64dp"
             android:layout_height="@dimen/dimen_large_64dp"
-            android:src="@drawable/ic_action_stop" />
+            android:src="@drawable/ic_btn_stop" />
 
         <ImageView
             android:id="@+id/play"
@@ -66,14 +66,16 @@
             android:layout_height="@dimen/dimen_large_64dp"
             android:layout_marginStart="@dimen/dimen_big_16dp"
             android:layout_marginEnd="@dimen/dimen_big_16dp"
-            android:src="@drawable/ic_action_play" />
+            android:src="@drawable/ic_btn_play" />
 
         <ImageView
             android:id="@+id/pause"
             android:layout_width="@dimen/dimen_large_64dp"
             android:layout_height="@dimen/dimen_large_64dp"
-            android:src="@drawable/ic_action_pause" />
+            android:src="@drawable/ic_btn_pause" />
 
     </LinearLayout>
+
+
 
 </RelativeLayout>
