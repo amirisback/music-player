@@ -50,7 +50,7 @@ class SongFragment : BaseFragment(), BaseViewListener<Song> {
     private fun arraySongData() : MutableList<Song> {
         val arraySong = mutableListOf<Song>()
         for (i in arrayString()) {
-            val splitString = i.split(",")
+            val splitString = i.split(";")
 
             val songCover = resString(splitString[0], DEF_DRAWABLE)
             val songMusic = resString(splitString[1], DEF_RAW)

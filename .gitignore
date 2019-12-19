@@ -12,6 +12,8 @@ build
 /captures
 .externalNativeBuild
 
+docs/_asset_song_files.csv
+
 built application files
 .apk
 .ap_
