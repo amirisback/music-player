@@ -19,10 +19,8 @@ package com.frogobox.basemusicplayer.model
  */
 
 data class Song(
-    var songImage: Int = 0,
-    var songMusic: Int = 0,
-    var songName: String? = null,
-    var artistName: String? = null,
-    var albumName: String? = null
-
-)
+    val songImage: Int,
+    val songMusic: Int,
+    val songName: String,
+    val artistName: String,
+    val albumName: String)

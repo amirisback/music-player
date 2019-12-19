@@ -11,8 +11,10 @@ import com.frogobox.basemusicplayer.R
 import com.frogobox.basemusicplayer.base.ui.BaseFragment
 import com.frogobox.basemusicplayer.base.view.BaseViewListener
 import com.frogobox.basemusicplayer.model.Song
+import com.frogobox.basemusicplayer.ui.activity.SongPlayingActivity
 import com.frogobox.basemusicplayer.util.helper.ConstHelper.Ext.DEF_DRAWABLE
 import com.frogobox.basemusicplayer.util.helper.ConstHelper.Ext.DEF_RAW
+import com.frogobox.basemusicplayer.util.helper.ConstHelper.Extra.EXTRA_SONG
 import com.frogobox.basemusicplayer.util.helper.RawDataHelper
 import com.frogobox.basemusicplayer.view.adapter.SongViewAdapter
 import kotlinx.android.synthetic.main.fragment_song.*
@@ -41,7 +43,7 @@ class SongFragment : BaseFragment(), BaseViewListener<Song> {
         return RawDataHelper().fetchData(context, R.raw._asset_song_files)
     }
 
-    private fun resString(type: String, value: String) : Int {
+    private fun resString(value: String, type: String) : Int {
         return resources.getIdentifier(value, type, context?.packageName)
     }
 
@@ -75,12 +77,7 @@ class SongFragment : BaseFragment(), BaseViewListener<Song> {
     }
 
     override fun onItemClicked(data: Song) {
-//        startActivity(
-//            Intent(context, FanartDetailActivity::class.java).putExtra(
-//                EXTRA_FANART,
-//                data
-//            )
-//        )
+        baseStartActivity<SongPlayingActivity, Song>(EXTRA_SONG, data)
     }
 
     override fun onItemLongClicked(data: Song) {

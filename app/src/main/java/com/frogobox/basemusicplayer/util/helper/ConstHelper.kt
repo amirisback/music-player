@@ -95,6 +95,7 @@ class ConstHelper {
         const val BASE_EXTRA = BuildConfig.APPLICATION_ID
         const val EXTRA_OPTION = "$BASE_EXTRA.EXTRA_OPTION"
         const val EXTRA_FANART = "$BASE_EXTRA.EXTRA_FANART"
+        const val EXTRA_SONG = "$BASE_EXTRA.EXTRA_SONG"
         const val EXTRA_FAVORITE_SCRIPT = "$BASE_EXTRA.EXTRA_FAVORITE_SCRIPT"
         const val EXTRA_EXAMPLE_SCRIPT = "$BASE_EXTRA.EXTRA_EXAMPLE_SCRIPT"
         const val EXTRA_CATEGORY = "$BASE_EXTRA.EXTRA_CATEGORY"
