@@ -4,14 +4,14 @@ import android.os.Bundle
 import com.frogobox.basemusicplayer.R
 import com.frogobox.basemusicplayer.base.admob.BaseAdmobActivity
 import com.frogobox.basemusicplayer.util.helper.ConstHelper
-import kotlinx.android.synthetic.main.activity_fashion_source.*
+import kotlinx.android.synthetic.main.activity_fanart_source.*
 import kotlinx.android.synthetic.main.ads_phone_tab_banner.*
 
 class FanartSourceActivity : BaseAdmobActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_fashion_source)
+        setContentView(R.layout.activity_fanart_source)
         setupDetailActivity("")
         setupInfoCopyright()
         setupShowAdsBanner(ads_phone_tab_banner)

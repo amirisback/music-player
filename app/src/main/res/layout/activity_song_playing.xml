@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dimen_big_16dp"
-            android:textColor="@color/colorTextBlack"
+            android:textColor="@color/colorPrimary"
             android:textSize="@dimen/text_size_title_small_18sp"
             android:textStyle="bold"
             tools:text="Artist Name" />
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dimen_big_16dp"
             android:maxLines="1"
-            android:textColor="@color/colorTextBlack"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="@dimen/text_size_title_small_18sp"
             tools:text="Song Name" />
 

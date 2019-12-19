@@ -8,14 +8,14 @@ import com.bumptech.glide.Glide
 import com.frogobox.basemusicplayer.R
 import com.frogobox.basemusicplayer.base.admob.BaseAdmobActivity
 import com.frogobox.basemusicplayer.util.helper.ConstHelper.Extra.EXTRA_FANART
-import kotlinx.android.synthetic.main.activity_fashion_detail.*
+import kotlinx.android.synthetic.main.activity_fanart_detail.*
 import kotlinx.android.synthetic.main.ads_phone_tab_banner.*
 
 class FanartDetailActivity : BaseAdmobActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_fashion_detail)
+        setContentView(R.layout.activity_fanart_detail)
         setupDetailActivity("")
         setupImageView()
         setupShowAdsBanner(ads_phone_tab_banner)
