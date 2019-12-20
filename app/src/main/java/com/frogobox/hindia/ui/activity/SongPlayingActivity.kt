@@ -11,6 +11,7 @@ import com.frogobox.hindia.base.admob.BaseAdmobActivity
 import com.frogobox.hindia.model.Song
 import com.frogobox.hindia.util.helper.ConstHelper.Extra.EXTRA_SONG
 import kotlinx.android.synthetic.main.activity_song_playing.*
+import kotlinx.android.synthetic.main.ads_phone_tab_special_smart_banner.*
 
 class SongPlayingActivity : BaseAdmobActivity() {
 
@@ -21,6 +22,7 @@ class SongPlayingActivity : BaseAdmobActivity() {
         setContentView(R.layout.activity_song_playing)
         setupDetailActivity("")
         setupComponentView()
+        setupShowAdsBanner(ads_phone_tab_special_smart_banner)
     }
 
     private fun setupComponentView() {

@@ -15,7 +15,7 @@
 
     <ImageView
         android:id="@+id/iv_song_image_list_item"
-        android:layout_width="80dp"
+        android:layout_width="@dimen/dimens_cover_song"
         android:layout_height="80dp"
         android:scaleType="centerCrop"
         tools:src="@mipmap/ic_launcher" />
@@ -31,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:maxLines="1"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorTextBlack"
             android:textSize="@dimen/text_size_title_small_18sp"
             android:textStyle="bold"
             tools:text="Song Name" />

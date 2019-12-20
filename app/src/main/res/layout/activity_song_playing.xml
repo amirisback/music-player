@@ -22,11 +22,10 @@
             android:textStyle="bold"
             tools:text="Artist Name" />
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/song_image"
             android:layout_width="@dimen/min_height_info_200dp"
             android:layout_height="@dimen/min_height_info_200dp"
-            android:scaleType="centerCrop"
             tools:src="@drawable/ic_frogobox" />
 
         <TextView
@@ -49,9 +48,9 @@
         android:id="@+id/container_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@+id/ads_phone_tab_special_smart_banner"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@dimen/dimen_big_16dp"
+        android:layout_marginBottom="@dimen/dimen_big_ultra_32dp"
         android:orientation="horizontal">
 
         <ImageView
@@ -76,6 +75,6 @@
 
     </LinearLayout>
 
-
+    <include layout="@layout/ads_phone_tab_special_smart_banner" />
 
 </RelativeLayout>

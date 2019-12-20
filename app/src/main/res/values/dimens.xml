@@ -66,5 +66,6 @@
     <dimen name="dimen_menu_category_100dp">100dp</dimen>
 
     <dimen name="dimen_splash_screen">144dp</dimen>
+    <dimen name="dimens_cover_song">80dp</dimen>
 
 </resources>
