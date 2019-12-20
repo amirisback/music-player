@@ -6,7 +6,7 @@ apply plugin: 'kotlin-kapt'
 android {
 
     // Declaration app name
-    def nameApp = "Lagu Hindia Evaluasi Offline"
+    def nameApp = "Lagu Offline Hindia - Topik"
 
     // Declaration apk / aab name
     def nameAPK = "lagu-hindia-offline"
