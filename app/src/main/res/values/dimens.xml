@@ -67,5 +67,6 @@
 
     <dimen name="dimen_splash_screen">144dp</dimen>
     <dimen name="dimens_cover_song">80dp</dimen>
+    <dimen name="dimen_big_med_48">48dp</dimen>
 
 </resources>

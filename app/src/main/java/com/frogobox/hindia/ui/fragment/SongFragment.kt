@@ -40,7 +40,7 @@ class SongFragment : BaseFragment(), BaseViewListener<Song> {
     }
 
     private fun arrayString(): MutableList<String> {
-        return RawDataHelper().fetchData(context, R.raw._asset_song_files)
+        return RawDataHelper().fetchDataShuffle(context, R.raw._asset_song_files)
     }
 
     private fun resString(value: String, type: String) : Int {
@@ -57,8 +57,9 @@ class SongFragment : BaseFragment(), BaseViewListener<Song> {
             val songName = splitString[2]
             val artistName = splitString[3]
             val albumName = splitString[4]
+            val lyrics = resString(splitString[5], DEF_RAW)
 
-            val song = Song(songCover, songMusic, songName, artistName, albumName)
+            val song = Song(songCover, songMusic, songName, artistName, albumName, lyrics)
             arraySong.add(song)
 
         }

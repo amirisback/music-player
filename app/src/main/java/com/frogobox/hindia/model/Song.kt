@@ -23,4 +23,5 @@ data class Song(
     val songMusic: Int,
     val songName: String,
     val artistName: String,
-    val albumName: String)
+    val albumName: String,
+    val lyrics: Int)

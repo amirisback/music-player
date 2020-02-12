@@ -27,7 +27,7 @@ import java.util.Collections;
  */
 public class RawDataHelper {
 
-    public ArrayList<String> fetchData(Context mContext, int sourceRaw) {
+    public ArrayList<String> fetchDataShuffle(Context mContext, int sourceRaw) {
         ArrayList<String> dataArrayList = new ArrayList<>();
         Resources res = mContext.getResources();
         InputStream raw_dict = res.openRawResource(sourceRaw);
@@ -45,6 +45,22 @@ public class RawDataHelper {
         return dataArrayList;
     }
 
+    public ArrayList<String> fetchData(Context mContext, int sourceRaw) {
+        ArrayList<String> dataArrayList = new ArrayList<>();
+        Resources res = mContext.getResources();
+        InputStream raw_dict = res.openRawResource(sourceRaw);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(raw_dict));
+        try {
+            String column;
+            while ((column = reader.readLine()) != null) {
+                dataArrayList.add(column);
+            }
+            reader.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return dataArrayList;
+    }
 
 //    public ArrayList<Fashion> fetchData(String sourceRaw) {
 //        ArrayList<Fashion> dataArrayList = new ArrayList<>();

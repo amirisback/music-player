@@ -10,8 +10,8 @@ import com.frogobox.hindia.R
 import com.frogobox.hindia.base.admob.BaseAdmobActivity
 import com.frogobox.hindia.model.Song
 import com.frogobox.hindia.util.helper.ConstHelper.Extra.EXTRA_SONG
+import com.frogobox.hindia.util.helper.RawDataHelper
 import kotlinx.android.synthetic.main.activity_song_playing.*
-import kotlinx.android.synthetic.main.ads_phone_tab_special_smart_banner.*
 
 class SongPlayingActivity : BaseAdmobActivity() {
 
@@ -25,6 +25,16 @@ class SongPlayingActivity : BaseAdmobActivity() {
         setupShowAdsBanner(ads_phone_tab_special_smart_banner)
     }
 
+
+    private fun arraySongData(lyric: Int): String {
+        val lyricArrayString = RawDataHelper().fetchData(this, lyric)
+        var lyrics = ""
+        for (i in lyricArrayString) {
+            lyrics = lyrics + i + "\n"
+        }
+        return lyrics
+    }
+
     private fun setupComponentView() {
         val extraSong = baseGetExtraData<Song>(EXTRA_SONG)
 
@@ -32,7 +42,7 @@ class SongPlayingActivity : BaseAdmobActivity() {
         artist_name.text = extraSong.artistName
         song_name.text = extraSong.songName
         Glide.with(this).load(extraSong.songImage).into(song_image)
-
+        tv_lyrics.text = arraySongData(extraSong.lyrics)
         setupButton(extraSong.songMusic)
     }
 
