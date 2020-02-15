@@ -96,9 +96,9 @@ android {
             signingConfig signingConfigs.release
 
             // Declaration admob id for release
-            def releaseAdmobPublisherId = "ca-app-pub-2963185309167575~7143580317"
-            def releaseAdmobBanner = "ca-app-pub-2963185309167575/4470343184"
-            def releaseAdmobInterstitial = "ca-app-pub-2963185309167575/1844179847"
+            def releaseAdmobPublisherId = ""
+            def releaseAdmobBanner = ""
+            def releaseAdmobInterstitial = ""
             def releaseAdmobInterstitialVideo = ""
             def releaseAdmobRewardedVideo = ""
             def releaseAdmobNativeAdvanced = ""
