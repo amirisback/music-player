@@ -6,7 +6,7 @@ import android.view.MenuItem
 import com.frogobox.hindia.R
 import com.frogobox.hindia.base.admob.BaseAdmobActivity
 import com.frogobox.hindia.ui.fragment.SongFragment
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.ads_banner.*
 import kotlinx.android.synthetic.main.toolbar_main.*
 
 class MainActivity : BaseAdmobActivity() {
@@ -15,6 +15,7 @@ class MainActivity : BaseAdmobActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setupToolbar()
+        setupShowAdsBanner(ads_banner)
         setupChildFragment(R.id.framelayout_main_container, SongFragment())
     }
 

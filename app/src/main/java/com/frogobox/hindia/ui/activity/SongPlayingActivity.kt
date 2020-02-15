@@ -22,7 +22,7 @@ class SongPlayingActivity : BaseAdmobActivity() {
         setContentView(R.layout.activity_song_playing)
         setupDetailActivity("")
         setupComponentView()
-        setupShowAdsBanner(ads_phone_tab_special_smart_banner)
+        setupShowAdsBanner(ads_banner)
     }
 
 

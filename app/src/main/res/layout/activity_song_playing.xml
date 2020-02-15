@@ -9,7 +9,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/ads_phone_tab_special_smart_banner">
+        android:layout_above="@id/ads_banner">
 
         <TextView
             android:id="@+id/tv_lyrics"
@@ -25,7 +25,7 @@
 
     <com.google.android.gms.ads.AdView
         xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/ads_phone_tab_special_smart_banner"
+        android:id="@+id/ads_banner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
