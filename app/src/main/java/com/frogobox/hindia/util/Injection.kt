@@ -4,7 +4,6 @@ import android.content.Context
 import androidx.preference.PreferenceManager
 import com.frogobox.hindia.source.FrogoDataRepository
 import com.frogobox.hindia.source.dao.FavoriteDao
-import com.frogobox.hindia.source.dao.FashionDao
 import com.frogobox.hindia.source.local.FrogoAppDatabase
 import com.frogobox.hindia.source.local.FrogoLocalDataSource
 import com.frogobox.hindia.source.remote.FrogoRemoteDataSource
@@ -29,9 +28,6 @@ import com.frogobox.hindia.source.remote.FrogoRemoteDataSource
 object Injection {
 
     fun provideFrogoRepository(context: Context): FrogoDataRepository {
-        val fashionDao: FashionDao by lazy {
-            FrogoAppDatabase.getInstance(context).fashionDao()
-        }
 
         val favoriteDao: FavoriteDao by lazy {
             FrogoAppDatabase.getInstance(context).favoriteScriptDao()
@@ -43,7 +39,6 @@ object Injection {
             FrogoLocalDataSource.getInstance(
                 appExecutors,
                 PreferenceManager.getDefaultSharedPreferences(context),
-                fashionDao,
                 favoriteDao))
     }
 

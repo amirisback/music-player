@@ -7,9 +7,7 @@ import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.frogobox.hindia.BuildConfig
-import com.frogobox.hindia.model.Fashion
 import com.frogobox.hindia.model.Favorite
-import com.frogobox.hindia.source.dao.FashionDao
 import com.frogobox.hindia.source.dao.FavoriteDao
 import com.frogobox.hindia.util.helper.ConstHelper.RoomDatabase.DATABASE_NAME
 
@@ -32,7 +30,6 @@ import com.frogobox.hindia.util.helper.ConstHelper.RoomDatabase.DATABASE_NAME
  */
 @Database(
     entities = [
-        (Fashion::class),
         (Favorite::class)
     ], version = 1
 )
@@ -40,7 +37,6 @@ import com.frogobox.hindia.util.helper.ConstHelper.RoomDatabase.DATABASE_NAME
 
 abstract class FrogoAppDatabase : RoomDatabase() {
 
-    abstract fun fashionDao(): FashionDao
     abstract fun favoriteScriptDao(): FavoriteDao
 
     companion object {
@@ -59,7 +55,7 @@ abstract class FrogoAppDatabase : RoomDatabase() {
             return if (BuildConfig.DEBUG) {
                 Room.databaseBuilder(
                     context.applicationContext,
-                    FrogoAppDatabase::class.java, DATABASE_NAME.toString()
+                    FrogoAppDatabase::class.java, DATABASE_NAME.toString().replace(".", "_")
                 )
                     .addMigrations(MIGRATION_2_3)
                     .fallbackToDestructiveMigration() // FOR DEVELOPMENT ONLY !!!!
@@ -67,7 +63,7 @@ abstract class FrogoAppDatabase : RoomDatabase() {
             } else {
                 Room.databaseBuilder(
                     context.applicationContext,
-                    FrogoAppDatabase::class.java, DATABASE_NAME.toString()
+                    FrogoAppDatabase::class.java, DATABASE_NAME.toString().replace(".", "_")
                 )
                     .addMigrations(MIGRATION_2_3)
                     .build()

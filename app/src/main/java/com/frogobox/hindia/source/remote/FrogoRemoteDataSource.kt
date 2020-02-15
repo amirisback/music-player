@@ -1,7 +1,6 @@
 package com.frogobox.hindia.source.remote
 
 import android.content.Context
-import com.frogobox.hindia.model.Fashion
 import com.frogobox.hindia.model.Favorite
 import com.frogobox.hindia.source.FrogoDataSource
 import com.frogobox.hindia.util.helper.FunHelper.Func.noAction
@@ -27,11 +26,7 @@ class FrogoRemoteDataSource(private val context: Context) : FrogoDataSource {
     override fun saveRoomFavorite(data: Favorite): Boolean {
         return noAction()
     }
-
-    override fun getRoomData(callback: FrogoDataSource.GetRoomDataCallBack<List<Fashion>>) {
-        noAction()
-    }
-
+    
     override fun getRoomFavorite(callback: FrogoDataSource.GetRoomDataCallBack<List<Favorite>>) {
         noAction()
     }

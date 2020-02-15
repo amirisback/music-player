@@ -2,7 +2,6 @@ package com.frogobox.hindia.source
 
 import com.frogobox.hindia.base.data.BaseDataSource
 import com.frogobox.hindia.model.Favorite
-import com.frogobox.hindia.model.Fashion
 
 /**
  * Created by Faisal Amir
@@ -28,7 +27,6 @@ interface FrogoDataSource : BaseDataSource {
     fun saveRoomFavorite(data: Favorite) : Boolean
 
     // Get
-    fun getRoomData(callback: GetRoomDataCallBack<List<Fashion>>)
     fun getRoomFavorite(callback: GetRoomDataCallBack<List<Favorite>>)
 
     // Update

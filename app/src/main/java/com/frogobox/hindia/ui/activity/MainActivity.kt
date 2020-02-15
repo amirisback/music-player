@@ -5,7 +5,6 @@ import android.view.Menu
 import android.view.MenuItem
 import com.frogobox.hindia.R
 import com.frogobox.hindia.base.admob.BaseAdmobActivity
-import com.frogobox.hindia.ui.fragment.FanartFragment
 import com.frogobox.hindia.ui.fragment.SongFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar_main.*
@@ -16,14 +15,7 @@ class MainActivity : BaseAdmobActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setupToolbar()
-        setupBottomNav(R.id.framelayout_main_container)
-        setupFragment(savedInstanceState)
-    }
-
-    private fun setupFragment(savedInstanceState: Bundle?) {
-        if (savedInstanceState == null) {
-            bottom_nav_main_menu.selectedItemId = R.id.bottom_menu_song
-        }
+        setupChildFragment(R.id.framelayout_main_container, SongFragment())
     }
 
     private fun setupToolbar() {
@@ -43,30 +35,6 @@ class MainActivity : BaseAdmobActivity() {
             }
             else -> super.onOptionsItemSelected(item)
         }
-    }
-
-    private fun setupBottomNav(frameLayout: Int) {
-        bottom_nav_main_menu.clearAnimation()
-        bottom_nav_main_menu.itemIconTintList = null
-        bottom_nav_main_menu.setOnNavigationItemSelectedListener {
-
-            when (it.itemId) {
-                R.id.bottom_menu_song -> {
-                    setupCustomTitleToolbar(R.string.title_song)
-                    setupChildFragment(frameLayout, SongFragment())
-                }
-
-                R.id.bottom_menu_fanart -> {
-                    setupCustomTitleToolbar(R.string.title_fanart)
-                    setupChildFragment(frameLayout, FanartFragment())
-                    setupShowAdsInterstitial()
-                }
-
-            }
-
-            true
-        }
-
     }
 
 }

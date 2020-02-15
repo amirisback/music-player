@@ -4,10 +4,8 @@ import android.content.SharedPreferences
 import androidx.annotation.VisibleForTesting
 import com.frogobox.hindia.base.view.BaseCallback
 import com.frogobox.hindia.model.Favorite
-import com.frogobox.hindia.model.Fashion
 import com.frogobox.hindia.source.FrogoDataSource
 import com.frogobox.hindia.source.dao.FavoriteDao
-import com.frogobox.hindia.source.dao.FashionDao
 import com.frogobox.hindia.util.AppExecutors
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -34,14 +32,9 @@ import io.reactivex.schedulers.Schedulers
 class FrogoLocalDataSource private constructor(
     private val appExecutors: AppExecutors,
     private val sharedPreferences: SharedPreferences,
-    private val fashionDao: FashionDao,
     private val favoriteDao: FavoriteDao
 ) : FrogoDataSource {
     override fun saveRoomFavorite(data: Favorite): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun getRoomData(callback: FrogoDataSource.GetRoomDataCallBack<List<Fashion>>) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
@@ -129,7 +122,6 @@ class FrogoLocalDataSource private constructor(
         fun getInstance(
             appExecutors: AppExecutors,
             sharedPreferences: SharedPreferences,
-            fashionDao: FashionDao,
             favoriteDao: FavoriteDao
 
         ): FrogoLocalDataSource {
@@ -138,7 +130,6 @@ class FrogoLocalDataSource private constructor(
                     INSTANCE = FrogoLocalDataSource(
                         appExecutors,
                         sharedPreferences,
-                        fashionDao,
                         favoriteDao
                     )
                 }

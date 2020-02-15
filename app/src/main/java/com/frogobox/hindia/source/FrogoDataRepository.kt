@@ -1,7 +1,6 @@
 package com.frogobox.hindia.source
 
 
-import com.frogobox.hindia.model.Fashion
 import com.frogobox.hindia.model.Favorite
 import com.frogobox.hindia.source.local.FrogoLocalDataSource
 import com.frogobox.hindia.source.remote.FrogoRemoteDataSource
@@ -28,10 +27,6 @@ open class FrogoDataRepository(private val remoteDataSource: FrogoRemoteDataSour
 
 
     override fun saveRoomFavorite(data: Favorite): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun getRoomData(callback: FrogoDataSource.GetRoomDataCallBack<List<Fashion>>) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 

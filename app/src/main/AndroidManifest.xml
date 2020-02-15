@@ -13,8 +13,6 @@
         android:theme="@style/AppTheme">
         <activity android:name="com.frogobox.hindia.ui.activity.SongPlayingActivity"></activity>
         <activity android:name="com.frogobox.hindia.ui.activity.AboutUsActivity" />
-        <activity android:name="com.frogobox.hindia.ui.activity.FanartSourceActivity" />
-        <activity android:name="com.frogobox.hindia.ui.activity.FanartDetailActivity" />
         <activity
             android:name="com.frogobox.hindia.ui.activity.MainActivity"
             android:theme="@style/AppThemeNoToolbar">
