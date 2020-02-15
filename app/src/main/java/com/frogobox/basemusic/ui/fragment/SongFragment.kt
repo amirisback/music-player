@@ -79,6 +79,7 @@ class SongFragment : BaseFragment(), BaseViewListener<Song> {
 
     override fun onItemClicked(data: Song) {
         baseStartActivity<SongPlayingActivity, Song>(EXTRA_SONG, data)
+        setupShowAdsInterstitial()
     }
 
     override fun onItemLongClicked(data: Song) {
