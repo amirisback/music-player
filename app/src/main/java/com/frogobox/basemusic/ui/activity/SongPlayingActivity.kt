@@ -9,8 +9,8 @@ import com.bumptech.glide.Glide
 import com.frogobox.basemusic.R
 import com.frogobox.basemusic.base.admob.BaseAdmobActivity
 import com.frogobox.basemusic.model.Song
-import com.frogobox.basemusic.util.helper.ConstHelper.Extra.EXTRA_SONG
-import com.frogobox.basemusic.util.helper.RawDataHelper
+import com.frogobox.basemusic.util.ConstHelper.Extra.EXTRA_SONG
+import com.frogobox.basemusic.util.RawDataHelper
 import kotlinx.android.synthetic.main.activity_song_playing.*
 
 class SongPlayingActivity : BaseAdmobActivity() {
@@ -27,7 +27,8 @@ class SongPlayingActivity : BaseAdmobActivity() {
 
 
     private fun arraySongData(lyric: Int): String {
-        val lyricArrayString = RawDataHelper().fetchData(this, lyric)
+        val lyricArrayString = RawDataHelper()
+            .fetchData(this, lyric)
         var lyrics = ""
         for (i in lyricArrayString) {
             lyrics = lyrics + i + "\n"

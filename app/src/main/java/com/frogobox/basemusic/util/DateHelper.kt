@@ -1,9 +1,9 @@
-package com.frogobox.basemusic.util.helper
+package com.frogobox.basemusic.util
 
 import android.os.Build
 import android.text.format.DateFormat
-import com.frogobox.basemusic.util.helper.ConstHelper.Date.HOUR_MILLIS
-import com.frogobox.basemusic.util.helper.ConstHelper.Date.MINUTE_MILLIS
+import com.frogobox.basemusic.util.ConstHelper.Date.HOUR_MILLIS
+import com.frogobox.basemusic.util.ConstHelper.Date.MINUTE_MILLIS
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
@@ -176,7 +176,11 @@ class DateHelper {
             }
 
             return when {
-                info > 1L -> getDataChat(dateTimeToTimeStamp(newDate))
+                info > 1L -> getDataChat(
+                    dateTimeToTimeStamp(
+                        newDate
+                    )
+                )
                 info == 1L -> "Yesterday"
                 else -> "Today"
             }
@@ -194,9 +198,15 @@ class DateHelper {
             }
 
             return when {
-                info > 1L -> getDataChat(dateTimeToTimeStamp(newDate))
+                info > 1L -> getDataChat(
+                    dateTimeToTimeStamp(
+                        newDate
+                    )
+                )
                 info == 1L -> "Yesterday"
-                else -> dateTimeTZtoHour(newDate)
+                else -> dateTimeTZtoHour(
+                    newDate
+                )
             }
         }
 

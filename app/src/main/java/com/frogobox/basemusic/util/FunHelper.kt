@@ -1,4 +1,4 @@
-package com.frogobox.basemusic.util.helper
+package com.frogobox.basemusic.util
 
 import android.app.AlertDialog
 import android.content.Context
@@ -10,9 +10,9 @@ import android.os.Environment
 import com.frogobox.basemusic.BuildConfig
 import com.frogobox.basemusic.R
 import com.frogobox.basemusic.base.util.BaseHelper
-import com.frogobox.basemusic.util.helper.ConstHelper.Dir.DIR_NAME
-import com.frogobox.basemusic.util.helper.ConstHelper.Dir.VIDEO_FILE_NAME
-import com.frogobox.basemusic.util.helper.ConstHelper.Pref.PREF_NAME
+import com.frogobox.basemusic.util.ConstHelper.Dir.DIR_NAME
+import com.frogobox.basemusic.util.ConstHelper.Dir.VIDEO_FILE_NAME
+import com.frogobox.basemusic.util.ConstHelper.Pref.PREF_NAME
 
 
 /**

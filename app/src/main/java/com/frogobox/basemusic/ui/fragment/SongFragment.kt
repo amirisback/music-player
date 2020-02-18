@@ -12,11 +12,11 @@ import com.frogobox.basemusic.base.ui.BaseFragment
 import com.frogobox.basemusic.base.view.BaseViewListener
 import com.frogobox.basemusic.model.Song
 import com.frogobox.basemusic.ui.activity.SongPlayingActivity
-import com.frogobox.basemusic.util.helper.ConstHelper.Ext.DEF_DRAWABLE
-import com.frogobox.basemusic.util.helper.ConstHelper.Ext.DEF_RAW
-import com.frogobox.basemusic.util.helper.ConstHelper.Extra.EXTRA_SONG
-import com.frogobox.basemusic.util.helper.RawDataHelper
-import com.frogobox.basemusic.view.adapter.SongViewAdapter
+import com.frogobox.basemusic.util.ConstHelper.Ext.DEF_DRAWABLE
+import com.frogobox.basemusic.util.ConstHelper.Ext.DEF_RAW
+import com.frogobox.basemusic.util.ConstHelper.Extra.EXTRA_SONG
+import com.frogobox.basemusic.util.RawDataHelper
+import com.frogobox.basemusic.ui.adapter.SongViewAdapter
 import kotlinx.android.synthetic.main.fragment_song.*
 
 
@@ -40,7 +40,8 @@ class SongFragment : BaseFragment(), BaseViewListener<Song> {
     }
 
     private fun arrayString(): MutableList<String> {
-        return RawDataHelper().fetchDataShuffle(context, R.raw._asset_song_files)
+        return RawDataHelper()
+            .fetchDataShuffle(context, R.raw._asset_song_files)
     }
 
     private fun resString(value: String, type: String) : Int {

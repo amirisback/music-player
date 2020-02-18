@@ -1,4 +1,4 @@
-package com.frogobox.basemusic.view.adapter
+package com.frogobox.basemusic.ui.adapter
 
 import android.view.View
 import android.view.ViewGroup

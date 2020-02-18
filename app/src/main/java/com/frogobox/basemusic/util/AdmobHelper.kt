@@ -1,4 +1,4 @@
-package com.frogobox.basemusic.util.helper
+package com.frogobox.basemusic.util
 
 import android.content.Context
 import android.util.Log

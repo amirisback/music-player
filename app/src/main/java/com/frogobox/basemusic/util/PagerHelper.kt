@@ -1,4 +1,4 @@
-package com.frogobox.basemusic.util.helper
+package com.frogobox.basemusic.util
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

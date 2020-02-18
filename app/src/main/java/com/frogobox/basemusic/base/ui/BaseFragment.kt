@@ -7,7 +7,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.frogobox.basemusic.base.admob.BaseAdmobActivity
 import com.frogobox.basemusic.base.util.BaseHelper
-import com.frogobox.basemusic.util.helper.AdmobHelper.Interstitial.showInterstitial
+import com.frogobox.basemusic.util.AdmobHelper.Interstitial.showInterstitial
 
 /**
  * Created by Faisal Amir
