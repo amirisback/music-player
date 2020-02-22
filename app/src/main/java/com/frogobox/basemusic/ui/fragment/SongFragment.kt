@@ -53,14 +53,11 @@ class SongFragment : BaseFragment(), BaseViewListener<Song> {
         for (i in arrayString()) {
             val splitString = i.split(";")
 
-            val songCover = resString(splitString[0], DEF_DRAWABLE)
-            val songMusic = resString(splitString[1], DEF_RAW)
-            val songName = splitString[2]
-            val artistName = splitString[3]
-            val albumName = splitString[4]
-            val lyrics = resString(splitString[5], DEF_RAW)
+            val songMusic = resString(splitString[0], DEF_RAW)
+            val songName = splitString[1]
+            val lyrics = resString(splitString[2], DEF_RAW)
 
-            val song = Song(songCover, songMusic, songName, artistName, albumName, lyrics)
+            val song = Song(songMusic, songName, lyrics)
             arraySong.add(song)
 
         }

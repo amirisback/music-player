@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.os.Handler
 import android.widget.SeekBar
 import android.widget.SeekBar.OnSeekBarChangeListener
-import com.bumptech.glide.Glide
 import com.frogobox.basemusic.R
 import com.frogobox.basemusic.base.admob.BaseAdmobActivity
 import com.frogobox.basemusic.model.Song
@@ -40,10 +39,8 @@ class SongPlayingActivity : BaseAdmobActivity() {
         val extraSong = baseGetExtraData<Song>(EXTRA_SONG)
 
         seekBar.isEnabled = false
-        artist_name.text = extraSong.artistName
         song_name.text = extraSong.songName
-        Glide.with(this).load(extraSong.songImage).into(song_image)
-        tv_lyrics.text = arraySongData(extraSong.lyrics)
+        tv_lyrics.text = arraySongData(extraSong.songLyric)
         setupButton(extraSong.songMusic)
     }
 

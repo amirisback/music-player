@@ -57,41 +57,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <de.hdodenhof.circleimageview.CircleImageView
+            <ImageView
                 android:id="@+id/song_image"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="@dimen/dimen_big_med_48"
+                android:layout_height="@dimen/dimen_big_med_48"
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="@dimen/dimen_big_16dp"
-                tools:src="@drawable/ic_frogobox" />
+                android:src="@drawable/ic_audiotrack"/>
 
-            <LinearLayout
-                android:layout_width="0dp"
+            <TextView
+                android:id="@+id/song_name"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/artist_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:maxLines="1"
-                    android:textColor="@color/colorPrimary"
-                    android:textStyle="bold"
-                    tools:text="Artist Name" />
-
-                <TextView
-                    android:id="@+id/song_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:maxLines="1"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="@dimen/text_size_medium_16sp"
-                    tools:text="Song Name" />
-
-
-            </LinearLayout>
+                android:maxLines="1"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/text_size_medium_16sp"
+                tools:text="Song Name" />
 
         </LinearLayout>
 

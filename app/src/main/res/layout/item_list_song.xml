@@ -15,38 +15,20 @@
 
     <ImageView
         android:id="@+id/iv_song_image_list_item"
-        android:layout_width="@dimen/dimens_cover_song"
-        android:layout_height="80dp"
+        android:layout_width="@dimen/dimen_big_med_48"
+        android:layout_height="@dimen/dimen_big_med_48"
         android:scaleType="centerCrop"
-        tools:src="@mipmap/ic_launcher" />
+        android:layout_marginEnd="@dimen/dimen_big_16dp"
+        android:src="@mipmap/ic_launcher_round" />
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/tv_song_name_list_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dimen_big_16dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/tv_song_name_list_item"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:maxLines="1"
-            android:textColor="@color/colorTextBlack"
-            android:textSize="@dimen/text_size_title_small_18sp"
-            android:textStyle="bold"
-            tools:text="Song Name" />
-
-
-        <TextView
-            android:id="@+id/tv_album_name_list_item"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:maxLines="1"
-            android:textColor="@color/colorPrimary"
-            tools:text="Album Name" />
-
-
-    </LinearLayout>
-
+        android:maxLines="1"
+        android:textColor="@color/colorTextBlack"
+        android:textSize="@dimen/text_size_title_small_18sp"
+        android:textStyle="bold"
+        tools:text="Song Name" />
 
 </LinearLayout>

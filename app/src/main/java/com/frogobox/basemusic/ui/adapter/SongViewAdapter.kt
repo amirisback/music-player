@@ -34,15 +34,11 @@ class SongViewAdapter : BaseViewAdapter<Song>() {
     inner class SongViewHolder(view: View) : BaseViewHolder<Song>(view) {
 
         private val tv_song = view.tv_song_name_list_item
-        private val tv_album = view.tv_album_name_list_item
-        private val iv_cover = view.iv_song_image_list_item
 
         override fun initComponent(data: Song) {
             super.initComponent(data)
 
             tv_song.text = data.songName
-            tv_album.text = data.albumName
-            Glide.with(itemView.context).load(data.songImage).into(iv_cover)
         }
     }
 
