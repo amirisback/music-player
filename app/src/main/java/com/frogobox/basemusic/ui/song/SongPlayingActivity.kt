@@ -1,29 +1,32 @@
-package com.frogobox.basemusic.ui.activity
+package com.frogobox.basemusic.ui.song
 
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
 import android.widget.SeekBar
 import android.widget.SeekBar.OnSeekBarChangeListener
-import com.frogobox.basemusic.R
-import com.frogobox.basemusic.base.admob.BaseAdmobActivity
+import com.frogobox.basemusic.core.BaseActivity
+import com.frogobox.basemusic.databinding.ActivitySongPlayingBinding
 import com.frogobox.basemusic.model.Song
 import com.frogobox.basemusic.util.ConstHelper.Extra.EXTRA_SONG
 import com.frogobox.basemusic.util.RawDataHelper
-import kotlinx.android.synthetic.main.activity_song_playing.*
 
-class SongPlayingActivity : BaseAdmobActivity() {
+class SongPlayingActivity : BaseActivity<ActivitySongPlayingBinding>() {
 
     private var mMediaPlayer: MediaPlayer? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_song_playing)
-        setupDetailActivity("")
-        setupComponentView()
-        setupShowAdsBanner(ads_banner)
+    override fun setupViewBinding(): ActivitySongPlayingBinding {
+        return ActivitySongPlayingBinding.inflate(layoutInflater)
     }
 
+    override fun setupViewModel() {
+    }
+
+    override fun setupUI(savedInstanceState: Bundle?) {
+        setupDetailActivity("")
+        setupComponentView()
+        setupShowAdsBanner(binding.adsBanner)
+    }
 
     private fun arraySongData(lyric: Int): String {
         val lyricArrayString = RawDataHelper()
@@ -38,18 +41,18 @@ class SongPlayingActivity : BaseAdmobActivity() {
     private fun setupComponentView() {
         val extraSong = baseGetExtraData<Song>(EXTRA_SONG)
 
-        seekBar.isEnabled = false
-        song_name.text = extraSong.songName
-        tv_lyrics.text = arraySongData(extraSong.songLyric)
+        binding.seekBar.isEnabled = false
+        binding.songName.text = extraSong.songName
+        binding.tvLyrics.text = arraySongData(extraSong.songLyric)
         setupButton(extraSong.songMusic)
     }
 
     private fun setupButton(song: Int) {
-        play.setOnClickListener { playSong(song) }
-        stop.setOnClickListener { stopSong() }
-        pause.setOnClickListener { pauseSong() }
+        binding.play.setOnClickListener { playSong(song) }
+        binding.stop.setOnClickListener { stopSong() }
+        binding.pause.setOnClickListener { pauseSong() }
 
-        seekBar.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
+        binding.seekBar.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
             var seeked_progess = 0
             override fun onProgressChanged(seekBar: SeekBar, i: Int, b: Boolean) {
                 seeked_progess = i
@@ -64,21 +67,21 @@ class SongPlayingActivity : BaseAdmobActivity() {
     }
 
     private fun playSong(songMusic: Int) {
-        seekBar.isEnabled = true
+        binding.seekBar.isEnabled = true
         if (mMediaPlayer == null) {
             mMediaPlayer = MediaPlayer.create(this, songMusic)
             mMediaPlayer!!.start()
-            seekBar.max = mMediaPlayer!!.duration / 1000
+            binding.seekBar.max = mMediaPlayer!!.duration / 1000
         } else {
             mMediaPlayer!!.start()
-            seekBar.max = mMediaPlayer!!.duration / 1000
+            binding.seekBar.max = mMediaPlayer!!.duration / 1000
         }
         runOnUiThread(
             object : Runnable {
                 override fun run() {
                     if (mMediaPlayer != null) {
                         val mCurrentPosition = mMediaPlayer!!.currentPosition / 1000
-                        seekBar.progress = mCurrentPosition
+                        binding.seekBar.progress = mCurrentPosition
                     }
                     Handler().postDelayed(this, 1000);
                 }
@@ -88,7 +91,7 @@ class SongPlayingActivity : BaseAdmobActivity() {
 
 
     private fun pauseSong() {
-        seekBar.isEnabled = false
+        binding.seekBar.isEnabled = false
         if (mMediaPlayer != null) {
             mMediaPlayer!!.pause()
         }
@@ -96,8 +99,8 @@ class SongPlayingActivity : BaseAdmobActivity() {
     }
 
     private fun stopSong() {
-        seekBar.isEnabled = false
-        seekBar.progress = 0
+        binding.seekBar.isEnabled = false
+        binding.seekBar.progress = 0
         if (mMediaPlayer != null) {
             mMediaPlayer!!.stop()
             releaseMediaPlayer()
@@ -116,5 +119,6 @@ class SongPlayingActivity : BaseAdmobActivity() {
         releaseMediaPlayer()
         finish()
     }
+
 
 }

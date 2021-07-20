@@ -1,13 +1,14 @@
-package com.frogobox.basemusic.base.ui
+package com.frogobox.basemusic.core
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.frogobox.basemusic.base.admob.BaseAdmobActivity
-import com.frogobox.basemusic.base.util.BaseHelper
-import com.frogobox.basemusic.util.AdmobHelper.Interstitial.showInterstitial
+import androidx.viewbinding.ViewBinding
+import com.google.gson.Gson
 
 /**
  * Created by Faisal Amir
@@ -26,13 +27,41 @@ import com.frogobox.basemusic.util.AdmobHelper.Interstitial.showInterstitial
  * com.frogobox.basemusicplayer.activity
  *
  */
-open class BaseFragment : Fragment() {
+abstract class BaseFragment<VB : ViewBinding> : Fragment() {
 
-    lateinit var mBaseActivity: BaseAdmobActivity
+    protected lateinit var mActivity: BaseActivity<*>
+
+    protected var binding : VB? = null
+
+    abstract fun setupViewBinding(inflater: LayoutInflater, container: ViewGroup): VB
+
+    abstract fun setupViewModel()
+
+    abstract fun setupUI(savedInstanceState: Bundle?)
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = container?.let { setupViewBinding(inflater, it) }
+        setupViewModel()
+        return binding?.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupUI(savedInstanceState)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        binding = null
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mBaseActivity = (activity as BaseAdmobActivity)
+        mActivity = (activity as BaseActivity<*>)
     }
 
     protected fun setupChildFragment(frameId: Int, fragment: Fragment) {
@@ -43,11 +72,11 @@ open class BaseFragment : Fragment() {
     }
 
     protected fun setupShowAdsInterstitial() {
-        showInterstitial(mBaseActivity.mInterstitialAd)
+        mActivity.setupShowAdsInterstitial()
     }
 
     fun <Model> baseNewInstance(argsKey: String, data: Model) {
-        val argsData = BaseHelper().baseToJson(data)
+        val argsData = Gson().toJson(data)
         val bundleArgs = Bundle().apply {
             putString(argsKey, argsData)
         }
@@ -56,12 +85,11 @@ open class BaseFragment : Fragment() {
 
     protected inline fun <reified Model> baseGetInstance(argsKey: String): Model {
         val argsData = this.arguments?.getString(argsKey)
-        val instaceData = BaseHelper().baseFromJson<Model>(argsData)
-        return instaceData
+        return Gson().fromJson(argsData, Model::class.java)
     }
 
     protected fun checkArgument(argsKey: String): Boolean {
-        return arguments!!.containsKey(argsKey)
+        return requireArguments().containsKey(argsKey)
     }
 
     protected fun setupEventEmptyView(view: View, isEmpty: Boolean) {
@@ -93,7 +121,7 @@ open class BaseFragment : Fragment() {
         data: Model
     ) {
         val intent = Intent(context, ClassActivity::class.java)
-        val extraData = BaseHelper().baseToJson(data)
+        val extraData = Gson().toJson(data)
         intent.putExtra(extraKey, extraData)
         this.startActivity(intent)
     }

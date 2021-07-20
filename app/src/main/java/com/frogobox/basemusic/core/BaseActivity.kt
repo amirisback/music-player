@@ -1,4 +1,4 @@
-package com.frogobox.basemusic.base.ui
+package com.frogobox.basemusic.core
 
 import android.content.Intent
 import android.graphics.drawable.ColorDrawable
@@ -8,11 +8,12 @@ import android.view.MenuItem
 import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.viewbinding.ViewBinding
+import com.frogobox.admob.ui.FrogoAdmobActivity
 import com.frogobox.basemusic.R
-import com.frogobox.basemusic.base.util.BaseHelper
+import com.google.gson.Gson
 
 /**
  * Created by Faisal Amir
@@ -31,10 +32,29 @@ import com.frogobox.basemusic.base.util.BaseHelper
  * com.frogobox.basemusicplayer.base
  *
  */
-open class BaseActivity : AppCompatActivity() {
+abstract class BaseActivity<VB : ViewBinding> : FrogoAdmobActivity() {
+
+    protected lateinit var binding: VB
+
+    abstract fun setupViewBinding(): VB
+
+    abstract fun setupViewModel()
+
+    abstract fun setupUI(savedInstanceState: Bundle?)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = setupViewBinding()
+        setContentView(binding.root)
+        setupViewModel()
+        setupUI(savedInstanceState)
+        setupAdmob()
+    }
+
+    private fun setupAdmob() {
+        setupAdsPublisher(getString(R.string.admob_publisher_id))
+        setupAdsBanner(getString(R.string.admob_banner))
+        setupAdsInterstitial(getString(R.string.admob_interstitial))
     }
 
     protected fun setupCustomTitleToolbar(title: Int) {
@@ -65,15 +85,14 @@ open class BaseActivity : AppCompatActivity() {
         data: Model
     ) {
         val intent = Intent(this, ClassActivity::class.java)
-        val extraData = BaseHelper().baseToJson(data)
+        val extraData = Gson().toJson(data)
         intent.putExtra(extraKey, extraData)
         this.startActivity(intent)
     }
 
     protected inline fun <reified Model> baseGetExtraData(extraKey: String): Model {
         val extraIntent = intent.getStringExtra(extraKey)
-        val extraData = BaseHelper().baseFromJson<Model>(extraIntent)
-        return extraData
+        return Gson().fromJson(extraIntent, Model::class.java)
     }
 
     protected fun checkExtra(extraKey: String): Boolean {
@@ -81,7 +100,7 @@ open class BaseActivity : AppCompatActivity() {
     }
 
     protected fun <Model> baseFragmentNewInstance(
-        fragment: BaseFragment,
+        fragment: BaseFragment<*>,
         argumentKey: String,
         extraDataResult: Model
     ) {

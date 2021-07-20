@@ -1,12 +1,12 @@
-package com.frogobox.basemusic.ui.adapter
+package com.frogobox.basemusic.ui.song
 
 import android.view.View
 import android.view.ViewGroup
-import com.bumptech.glide.Glide
-import com.frogobox.basemusic.base.view.BaseViewAdapter
-import com.frogobox.basemusic.base.view.BaseViewHolder
+import android.widget.TextView
+import com.frogobox.basemusic.R
 import com.frogobox.basemusic.model.Song
-import kotlinx.android.synthetic.main.item_list_song.view.*
+import com.frogobox.recycler.core.FrogoRecyclerViewAdapter
+import com.frogobox.recycler.core.FrogoRecyclerViewHolder
 
 /**
  * Created by Faisal Amir
@@ -25,19 +25,17 @@ import kotlinx.android.synthetic.main.item_list_song.view.*
  * com.frogobox.basemusicplayer.view.adapter
  *
  */
-class SongViewAdapter : BaseViewAdapter<Song>() {
+class SongViewAdapter : FrogoRecyclerViewAdapter<Song>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<Song> {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FrogoRecyclerViewHolder<Song> {
         return SongViewHolder(viewLayout(parent))
     }
 
-    inner class SongViewHolder(view: View) : BaseViewHolder<Song>(view) {
+    inner class SongViewHolder(view: View) : FrogoRecyclerViewHolder<Song>(view) {
 
-        private val tv_song = view.tv_song_name_list_item
+        private val tv_song = view.findViewById<TextView>(R.id.tv_song_name_list_item)
 
         override fun initComponent(data: Song) {
-            super.initComponent(data)
-
             tv_song.text = data.songName
         }
     }
