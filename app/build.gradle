@@ -6,9 +6,6 @@ plugins {
 
 android {
 
-    // Declaration Room DB Name
-    def nameDB = '"music_player.db"'
-
     // Declaration admob id for release
     def releaseAdmobPublisherId = ""
     def releaseAdmobBanner = ""
@@ -33,9 +30,6 @@ android {
 
         vectorDrawables.useSupportLibrary = true
 
-        // Declaration build config
-        buildConfigField("String", "DATABASE_NAME", nameDB)
-
         // Declaration apps name debug mode
         def debugAttribute = " Development"
         def nameAppDebug = nameApp + debugAttribute
@@ -45,7 +39,6 @@ android {
                 + new Date().format('ddMMyy'))
 
         resConfigs "en", "id"
-        vectorDrawables.useSupportLibrary = true
 
         // Inject app name for debug
         resValue "string", "app_name", nameAppDebug
