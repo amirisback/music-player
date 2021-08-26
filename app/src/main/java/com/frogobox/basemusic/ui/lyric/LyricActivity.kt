@@ -6,7 +6,7 @@ import android.view.MenuItem
 import com.frogobox.basemusic.R
 import com.frogobox.basemusic.core.BaseActivity
 import com.frogobox.basemusic.databinding.ActivityLyricBinding
-import com.frogobox.basemusic.ui.songlyric.SongLyricFragment
+import com.frogobox.basemusic.ui.main.AboutUsActivity
 
 class LyricActivity : BaseActivity<ActivityLyricBinding>() {
 

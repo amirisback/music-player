@@ -12,11 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".ui.songlyric.SongLyricPlayingActivity" />
-        <activity android:name=".ui.lyric.AboutUsActivity" />
-
+        <activity android:name=".ui.lyric.SongLyricPlayingActivity" />
+        <activity android:name=".ui.main.AboutUsActivity" />
         <activity
             android:name=".ui.lyric.LyricActivity"
+            android:exported="true"
+            android:theme="@style/AppThemeNoToolbar" />
+
+        <activity
+            android:name=".ui.main.MainActivity"
             android:exported="true"
             android:theme="@style/AppThemeNoToolbar">
             <intent-filter>
@@ -26,10 +30,10 @@
             </intent-filter>
         </activity>
 
+
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="@string/admob_publisher_id" />
-
     </application>
 
 </manifest>
