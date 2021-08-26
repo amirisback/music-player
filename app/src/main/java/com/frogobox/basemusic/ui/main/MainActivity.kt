@@ -3,7 +3,8 @@ package com.frogobox.basemusic.ui.main
 import android.os.Bundle
 import com.frogobox.basemusic.core.BaseActivity
 import com.frogobox.basemusic.databinding.ActivityMainBinding
-import com.frogobox.basemusic.ui.lyric.LyricActivity
+import com.frogobox.basemusic.ui.song.SongActivity
+import com.frogobox.basemusic.ui.lyric.SongLyricActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 
@@ -18,11 +19,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         binding.apply {
 
             btnSimple.setOnClickListener {
-
+                baseStartActivity<SongActivity>()
             }
 
             btnLyric.setOnClickListener {
-                baseStartActivity<LyricActivity>()
+                baseStartActivity<SongLyricActivity>()
             }
 
         }

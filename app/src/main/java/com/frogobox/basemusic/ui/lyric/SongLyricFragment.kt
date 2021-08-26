@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.frogobox.basemusic.R
 import com.frogobox.basemusic.core.BaseFragment
 import com.frogobox.basemusic.databinding.FragmentSongLyricBinding
-import com.frogobox.basemusic.model.Song
+import com.frogobox.basemusic.model.SongLyric
 import com.frogobox.basemusic.util.ConstHelper.Ext.DEF_RAW
 import com.frogobox.basemusic.util.ConstHelper.Extra.EXTRA_SONG
 import com.frogobox.basemusic.util.RawDataHelper
@@ -42,8 +42,8 @@ class SongLyricFragment : BaseFragment<FragmentSongLyricBinding>() {
         return resources.getIdentifier(value, type, context?.packageName)
     }
 
-    private fun arraySongData(): MutableList<Song> {
-        val arraySong = mutableListOf<Song>()
+    private fun arraySongData(): MutableList<SongLyric> {
+        val arraySong = mutableListOf<SongLyric>()
         for (i in arrayString()) {
             val splitString = i.split(";")
 
@@ -51,7 +51,7 @@ class SongLyricFragment : BaseFragment<FragmentSongLyricBinding>() {
             val songName = splitString[1]
             val lyrics = resString(splitString[2], DEF_RAW)
 
-            val song = Song(songMusic, songName, lyrics)
+            val song = SongLyric(songMusic, songName, lyrics)
             arraySong.add(song)
 
         }
@@ -61,13 +61,13 @@ class SongLyricFragment : BaseFragment<FragmentSongLyricBinding>() {
     private fun setupAdapter(): SongLyricViewAdapter {
         val adapter = SongLyricViewAdapter()
         adapter.setupRequirement(R.layout.item_song_lyric, arraySongData(),
-            object : FrogoRecyclerViewListener<Song> {
-                override fun onItemClicked(data: Song) {
-                    baseStartActivity<SongLyricPlayingActivity, Song>(EXTRA_SONG, data)
+            object : FrogoRecyclerViewListener<SongLyric> {
+                override fun onItemClicked(data: SongLyric) {
+                    baseStartActivity<SongLyricPlayingActivity, SongLyric>(EXTRA_SONG, data)
                     setupShowAdsInterstitial()
                 }
 
-                override fun onItemLongClicked(data: Song) {
+                override fun onItemLongClicked(data: SongLyric) {
                 }
             })
         return adapter

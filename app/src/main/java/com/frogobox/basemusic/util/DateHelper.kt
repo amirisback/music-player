@@ -23,7 +23,7 @@ import java.util.concurrent.TimeUnit
  * LinkedIn : linkedin.com/in/faisalamircs
  * -----------------------------------------
  * FrogoBox Software Industries
- * com.frogobox.basemusicplayer.util.helper
+ * com.frogobox.basemusic.util.helper
  *
  */
 class DateHelper {

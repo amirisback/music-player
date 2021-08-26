@@ -23,7 +23,7 @@ import java.util.Collections;
  * LinkedIn : linkedin.com/in/faisalamircs
  * -----------------------------------------
  * FrogoBox Software Industries
- * com.frogobox.basemusicplayer.util.helper
+ * com.frogobox.basemusic.util.helper
  */
 public class RawDataHelper {
 
@@ -61,26 +61,5 @@ public class RawDataHelper {
         }
         return dataArrayList;
     }
-
-//    public ArrayList<Fashion> fetchData(String sourceRaw) {
-//        ArrayList<Fashion> dataArrayList = new ArrayList<>();
-//        BufferedReader reader;
-//        try {
-//            reader = new BufferedReader(new FileReader(sourceRaw));
-//            String column;
-//            while ((column = reader.readLine()) != null) {
-//                String[] splitString = column.split(",");
-//                ArrayList<String> partTemp = new ArrayList<>();
-//                Collections.addAll(partTemp, splitString);
-//                Fashion mData = new Fashion(partTemp.get(0), Integer.parseInt(partTemp.get(1)), Double.parseDouble(partTemp.get(2)));
-//                dataArrayList.add(mData);
-//            }
-//            reader.close();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return dataArrayList;
-//    }
-
 
 }

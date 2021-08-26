@@ -7,7 +7,7 @@ import android.widget.SeekBar
 import android.widget.SeekBar.OnSeekBarChangeListener
 import com.frogobox.basemusic.core.BaseActivity
 import com.frogobox.basemusic.databinding.ActivitySongLyricPlayingBinding
-import com.frogobox.basemusic.model.Song
+import com.frogobox.basemusic.model.SongLyric
 import com.frogobox.basemusic.util.ConstHelper.Extra.EXTRA_SONG
 import com.frogobox.basemusic.util.RawDataHelper
 
@@ -39,7 +39,7 @@ class SongLyricPlayingActivity : BaseActivity<ActivitySongLyricPlayingBinding>()
     }
 
     private fun setupComponentView() {
-        val extraSong = baseGetExtraData<Song>(EXTRA_SONG)
+        val extraSong = baseGetExtraData<SongLyric>(EXTRA_SONG)
 
         binding.seekBar.isEnabled = false
         binding.songName.text = extraSong.songName

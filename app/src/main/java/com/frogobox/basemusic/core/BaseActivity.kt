@@ -29,7 +29,7 @@ import com.google.gson.Gson
  * LinkedIn : linkedin.com/in/faisalamircs
  * -----------------------------------------
  * FrogoBox Software Industries
- * com.frogobox.basemusicplayer.base
+ * com.frogobox.basemusic.base
  *
  */
 abstract class BaseActivity<VB : ViewBinding> : FrogoAdmobActivity() {

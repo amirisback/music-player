@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/dimen_big_16dp"
+    android:layout_marginEnd="@dimen/dimen_big_16dp"
+    android:layout_marginBottom="@dimen/dimen_medium_8dp"
+    android:background="@drawable/background_card"
+    android:elevation="@dimen/dimen_elevation_2dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="@dimen/dimen_medium_8dp">
+
+
+    <ImageView
+        android:id="@+id/iv_song_image_list_item"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        tools:src="@mipmap/ic_launcher" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_big_16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_song_name_list_item"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:maxLines="1"
+            android:textColor="@color/colorTextBlack"
+            android:textSize="@dimen/text_size_title_small_18sp"
+            android:textStyle="bold"
+            tools:text="Song Name" />
+
+        <TextView
+            android:id="@+id/tv_album_name_list_item"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:maxLines="1"
+            android:textColor="@color/colorPrimary"
+            tools:text="Album Name" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -19,6 +19,8 @@ package com.frogobox.basemusic.model
  */
 
 data class Song(
+    val songImage: Int,
     val songMusic: Int,
     val songName: String,
-    val songLyric: Int)
+    val artistName: String,
+    val albumName: String)

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundWhite"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/artist_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_big_16dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_size_title_small_18sp"
+            android:textStyle="bold"
+            tools:text="Artist Name" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/song_image"
+            android:layout_width="@dimen/min_height_info_200dp"
+            android:layout_height="@dimen/min_height_info_200dp"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/ic_frogobox" />
+
+        <TextView
+            android:id="@+id/song_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_big_16dp"
+            android:maxLines="1"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/text_size_title_small_18sp"
+            tools:text="Song Name" />
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/container_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ads"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/dimen_big_ultra_32dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/stop"
+            android:layout_width="@dimen/dimen_large_64dp"
+            android:layout_height="@dimen/dimen_large_64dp"
+            android:src="@drawable/ic_action_stop" />
+
+        <ImageView
+            android:id="@+id/play"
+            android:layout_width="@dimen/dimen_large_64dp"
+            android:layout_height="@dimen/dimen_large_64dp"
+            android:layout_marginStart="@dimen/dimen_big_16dp"
+            android:layout_marginEnd="@dimen/dimen_big_16dp"
+            android:src="@drawable/ic_action_play" />
+
+        <ImageView
+            android:id="@+id/pause"
+            android:layout_width="@dimen/dimen_large_64dp"
+            android:layout_height="@dimen/dimen_large_64dp"
+            android:src="@drawable/ic_action_pause" />
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/ads"
+        layout="@layout/ads_banner" />
+
+</RelativeLayout>

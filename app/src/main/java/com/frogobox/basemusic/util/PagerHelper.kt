@@ -18,7 +18,7 @@ import androidx.fragment.app.FragmentPagerAdapter
  * LinkedIn : linkedin.com/in/faisalamircs
  * -----------------------------------------
  * FrogoBox Software Industries
- * com.frogobox.basemusicplayer.util.helper
+ * com.frogobox.basemusic.util.helper
  *
  */
 @Suppress("DEPRECATION")

@@ -24,7 +24,7 @@ import com.google.gson.Gson
  * LinkedIn : linkedin.com/in/faisalamircs
  * -----------------------------------------
  * FrogoBox Software Industries
- * com.frogobox.basemusicplayer.activity
+ * com.frogobox.basemusic.activity
  *
  */
 abstract class BaseFragment<VB : ViewBinding> : Fragment() {
