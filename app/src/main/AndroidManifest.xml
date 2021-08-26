@@ -12,11 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".ui.song.SongPlayingActivity" />
-        <activity android:name=".ui.main.AboutUsActivity" />
+        <activity android:name=".ui.songlyric.SongLyricPlayingActivity" />
+        <activity android:name=".ui.lyric.AboutUsActivity" />
 
         <activity
-            android:name=".ui.main.MainActivity"
+            android:name=".ui.lyric.LyricActivity"
             android:exported="true"
             android:theme="@style/AppThemeNoToolbar">
             <intent-filter>

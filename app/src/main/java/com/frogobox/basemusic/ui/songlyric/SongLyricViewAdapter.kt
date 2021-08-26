@@ -1,4 +1,4 @@
-package com.frogobox.basemusic.ui.song
+package com.frogobox.basemusic.ui.songlyric
 
 import android.view.View
 import android.view.ViewGroup
@@ -25,7 +25,7 @@ import com.frogobox.recycler.core.FrogoRecyclerViewHolder
  * com.frogobox.basemusicplayer.view.adapter
  *
  */
-class SongViewAdapter : FrogoRecyclerViewAdapter<Song>() {
+class SongLyricViewAdapter : FrogoRecyclerViewAdapter<Song>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FrogoRecyclerViewHolder<Song> {
         return SongViewHolder(viewLayout(parent))

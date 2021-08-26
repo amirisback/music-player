@@ -1,4 +1,4 @@
-package com.frogobox.basemusic.ui.main
+package com.frogobox.basemusic.ui.lyric
 
 import android.os.Bundle
 import com.frogobox.basemusic.R

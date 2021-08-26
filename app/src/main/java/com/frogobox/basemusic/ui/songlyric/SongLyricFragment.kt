@@ -1,4 +1,4 @@
-package com.frogobox.basemusic.ui.song
+package com.frogobox.basemusic.ui.songlyric
 
 
 import android.os.Bundle
@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.frogobox.basemusic.R
 import com.frogobox.basemusic.core.BaseFragment
-import com.frogobox.basemusic.databinding.FragmentSongBinding
+import com.frogobox.basemusic.databinding.FragmentSongLyricBinding
 import com.frogobox.basemusic.model.Song
 import com.frogobox.basemusic.util.ConstHelper.Ext.DEF_RAW
 import com.frogobox.basemusic.util.ConstHelper.Extra.EXTRA_SONG
@@ -18,13 +18,13 @@ import com.frogobox.recycler.core.FrogoRecyclerViewListener
 /**
  * A simple [Fragment] subclass.
  */
-class SongFragment : BaseFragment<FragmentSongBinding>() {
+class SongLyricFragment : BaseFragment<FragmentSongLyricBinding>() {
 
     override fun setupViewBinding(
         inflater: LayoutInflater,
         container: ViewGroup
-    ): FragmentSongBinding {
-        return FragmentSongBinding.inflate(inflater, container, false)
+    ): FragmentSongLyricBinding {
+        return FragmentSongLyricBinding.inflate(inflater, container, false)
     }
 
     override fun setupViewModel() {
@@ -60,12 +60,12 @@ class SongFragment : BaseFragment<FragmentSongBinding>() {
         return arraySong
     }
 
-    private fun setupAdapter(): SongViewAdapter {
-        val adapter = SongViewAdapter()
-        adapter.setupRequirement(R.layout.item_list_song, arraySongData(),
+    private fun setupAdapter(): SongLyricViewAdapter {
+        val adapter = SongLyricViewAdapter()
+        adapter.setupRequirement(R.layout.item_song_lyric, arraySongData(),
             object : FrogoRecyclerViewListener<Song> {
                 override fun onItemClicked(data: Song) {
-                    baseStartActivity<SongPlayingActivity, Song>(EXTRA_SONG, data)
+                    baseStartActivity<SongLyricPlayingActivity, Song>(EXTRA_SONG, data)
                     setupShowAdsInterstitial()
                 }
 

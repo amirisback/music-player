@@ -12,11 +12,6 @@ build
 /captures
 .externalNativeBuild
 
-docs/_asset_song_files.csv
-
-*.mp3
-*.ogg
-
 built application files
 .apk
 .ap_

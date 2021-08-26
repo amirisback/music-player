@@ -6,4 +6,4 @@
     android:layout_height="match_parent"
     android:clipToPadding="false"
     android:paddingTop="@dimen/dimen_medium_8dp"
-    tools:listitem="@layout/item_list_song"/>
+    tools:listitem="@layout/item_song_lyric"/>

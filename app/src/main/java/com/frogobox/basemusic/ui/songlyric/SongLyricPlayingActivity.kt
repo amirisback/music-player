@@ -1,4 +1,4 @@
-package com.frogobox.basemusic.ui.song
+package com.frogobox.basemusic.ui.songlyric
 
 import android.media.MediaPlayer
 import android.os.Bundle
@@ -6,17 +6,17 @@ import android.os.Handler
 import android.widget.SeekBar
 import android.widget.SeekBar.OnSeekBarChangeListener
 import com.frogobox.basemusic.core.BaseActivity
-import com.frogobox.basemusic.databinding.ActivitySongPlayingBinding
+import com.frogobox.basemusic.databinding.ActivitySongLyricPlayingBinding
 import com.frogobox.basemusic.model.Song
 import com.frogobox.basemusic.util.ConstHelper.Extra.EXTRA_SONG
 import com.frogobox.basemusic.util.RawDataHelper
 
-class SongPlayingActivity : BaseActivity<ActivitySongPlayingBinding>() {
+class SongLyricPlayingActivity : BaseActivity<ActivitySongLyricPlayingBinding>() {
 
     private var mMediaPlayer: MediaPlayer? = null
 
-    override fun setupViewBinding(): ActivitySongPlayingBinding {
-        return ActivitySongPlayingBinding.inflate(layoutInflater)
+    override fun setupViewBinding(): ActivitySongLyricPlayingBinding {
+        return ActivitySongLyricPlayingBinding.inflate(layoutInflater)
     }
 
     override fun setupViewModel() {

@@ -1,17 +1,17 @@
-package com.frogobox.basemusic.ui.main
+package com.frogobox.basemusic.ui.lyric
 
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import com.frogobox.basemusic.R
 import com.frogobox.basemusic.core.BaseActivity
-import com.frogobox.basemusic.databinding.ActivityMainBinding
-import com.frogobox.basemusic.ui.song.SongFragment
+import com.frogobox.basemusic.databinding.ActivityLyricBinding
+import com.frogobox.basemusic.ui.songlyric.SongLyricFragment
 
-class MainActivity : BaseActivity<ActivityMainBinding>() {
+class LyricActivity : BaseActivity<ActivityLyricBinding>() {
 
-    override fun setupViewBinding(): ActivityMainBinding {
-        return ActivityMainBinding.inflate(layoutInflater)
+    override fun setupViewBinding(): ActivityLyricBinding {
+        return ActivityLyricBinding.inflate(layoutInflater)
     }
 
     override fun setupViewModel() {
@@ -20,7 +20,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     override fun setupUI(savedInstanceState: Bundle?) {
         setSupportActionBar(binding.toolbar.toolbarMain)
         setupShowAdsBanner(binding.ads.adsBanner)
-        setupChildFragment(binding.framelayoutMainContainer.id, SongFragment())
+        setupChildFragment(binding.framelayoutMainContainer.id, SongLyricFragment())
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
