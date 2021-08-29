@@ -25,25 +25,17 @@ class SongPlayingActivity : BaseActivity<ActivitySongPlayingBinding>() {
 
     override fun setupUI(savedInstanceState: Bundle?) {
         setupDetailActivity("")
-        setupComponentView()
         setupShowAdsBanner(binding.ads.adsBanner)
-    }
 
-    private fun setupComponentView() {
         val extraSong = baseGetExtraData<Song>(EXTRA_SONG)
+
         binding.apply {
             seekBar.isEnabled = false
             artistName.text = extraSong.artistName
             songName.text = extraSong.songName
             Glide.with(this@SongPlayingActivity).load(extraSong.songImage).into(songImage)
-        }
 
-        setupButton(extraSong.songMusic)
-    }
-
-    private fun setupButton(song: Int) {
-        binding.apply {
-            play.setOnClickListener { playSong(song) }
+            play.setOnClickListener { playSong(extraSong.songMusic) }
             stop.setOnClickListener { stopSong() }
             pause.setOnClickListener { pauseSong() }
 
@@ -58,9 +50,11 @@ class SongPlayingActivity : BaseActivity<ActivitySongPlayingBinding>() {
                     mMediaPlayer!!.seekTo(seeked_progess * 1000 % mMediaPlayer!!.duration)
                 }
             })
+
         }
 
     }
+
 
     private fun playSong(songMusic: Int) {
         binding.apply {

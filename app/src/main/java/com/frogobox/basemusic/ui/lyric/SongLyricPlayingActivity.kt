@@ -9,7 +9,7 @@ import com.frogobox.basemusic.core.BaseActivity
 import com.frogobox.basemusic.databinding.ActivitySongLyricPlayingBinding
 import com.frogobox.basemusic.model.SongLyric
 import com.frogobox.basemusic.util.ConstHelper.Extra.EXTRA_SONG
-import com.frogobox.basemusic.util.RawDataHelper
+import com.frogobox.sdk.core.FrogoFunc.fetchData
 
 class SongLyricPlayingActivity : BaseActivity<ActivitySongLyricPlayingBinding>() {
 
@@ -29,8 +29,7 @@ class SongLyricPlayingActivity : BaseActivity<ActivitySongLyricPlayingBinding>()
     }
 
     private fun arraySongData(lyric: Int): String {
-        val lyricArrayString = RawDataHelper()
-            .fetchData(this, lyric)
+        val lyricArrayString = fetchData<String>(this, lyric)
         var lyrics = ""
         for (i in lyricArrayString) {
             lyrics = lyrics + i + "\n"

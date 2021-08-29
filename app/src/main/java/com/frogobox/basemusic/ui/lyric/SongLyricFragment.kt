@@ -12,8 +12,8 @@ import com.frogobox.basemusic.databinding.FragmentSongLyricBinding
 import com.frogobox.basemusic.model.SongLyric
 import com.frogobox.basemusic.util.ConstHelper.Ext.DEF_RAW
 import com.frogobox.basemusic.util.ConstHelper.Extra.EXTRA_SONG
-import com.frogobox.basemusic.util.RawDataHelper
 import com.frogobox.recycler.core.FrogoRecyclerViewListener
+import com.frogobox.sdk.core.FrogoFunc.fetchData
 
 /**
  * A simple [Fragment] subclass.
@@ -35,7 +35,7 @@ class SongLyricFragment : BaseFragment<FragmentSongLyricBinding>() {
     }
 
     private fun arrayString(): MutableList<String> {
-        return RawDataHelper().fetchDataShuffle(context, R.raw._asset_song_lyric_files)
+        return fetchData(requireContext(), R.raw._asset_song_lyric_files)
     }
 
     private fun resString(value: String, type: String): Int {
